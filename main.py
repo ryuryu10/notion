@@ -1,9 +1,8 @@
-from plistlib import load
-from Tools import loader
-from Tools import api
+from traceback import print_tb
+from Tools import loader, notion
 import requests
 import json
 
 print("head title\n") 
-loaded_data = json.loads(api.Requests('databases',' '))
-print(api.Requests('databases',' '))
+data = notion.Requests("query")
+print(data['results'][0]['properties'])
