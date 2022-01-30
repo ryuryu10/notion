@@ -1,3 +1,4 @@
+from errno import EOWNERDEAD, EWOULDBLOCK
 from sqlite3 import Row
 from traceback import print_tb
 from typing import Collection
@@ -18,3 +19,7 @@ for a in data['results'][0]['properties']:
 
 for a in data['results']:
     Row_Data.append(a)
+for a in Row_Data:
+    for b in Column_Name:
+        print('{0} : {1}'.format(b, a['properties'][b]))
+    print("--------------")
