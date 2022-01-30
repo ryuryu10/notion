@@ -5,6 +5,8 @@ from . import loader
 import requests
 import json
 
+_SAVEDATA = True
+
 headers = {
     "Authorization" : "Bearer " + loader.load_config('token'),
     "Accept": "application/json",
@@ -25,6 +27,9 @@ def Requests(type):
     else:
         pass
     
-    
+    print(res.text)
+    if _SAVEDATA == True:
+        with open('./.json', 'w', encoding='utf8') as f:
+            json.dump(res, f, ensure_ascii=False)
     json_data = res.json()
     return json_data
