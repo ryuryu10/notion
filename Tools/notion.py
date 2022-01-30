@@ -1,5 +1,3 @@
-from asyncore import read
-from cgitb import reset
 from urllib import request
 from . import loader
 import requests
