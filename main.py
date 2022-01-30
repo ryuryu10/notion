@@ -50,6 +50,6 @@ for a in Row_Data:
             types = "title"
             Query = a['properties'][b]['title'][0]['plain_text']
         else:
-            pass
+            print("지원하지 않는 형식 : {0}".format(a['properties'][b]['type']))
         print(f'{b} | {types} | {Query}')
     print("--------------")
