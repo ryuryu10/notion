@@ -11,6 +11,8 @@ for a in data['results']:
     Row_Data.append(a)
 for a in Row_Data:
     for b in Column_Name:
+        Query = None
+        types = None
         if a['properties'][b]['type'] == "rich_text":
             types = "rich_text"
             Query = a['properties'][b]['rich_text'][0]['plain_text']
@@ -43,6 +45,10 @@ for a in Row_Data:
         elif a['properties'][b]['type'] == "number":
             types = "number"
             Query = a['properties'][b]['number']
+        
+        elif a['properties'][b]['type'] == "title":
+            types = "title"
+            Query = a['properties'][b]['title'][0]['plain_text']
         else:
             pass
         print(f'{b} | {types} | {Query}')
