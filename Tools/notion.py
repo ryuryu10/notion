@@ -28,5 +28,6 @@ def Requests(type):
     if _SAVEDATA == True:
         with open('./dump.json', 'w', encoding='utf8') as f:
             json.dump(res.json(), f, ensure_ascii=False)
+            
     json_data = res.json()
     return json_data
